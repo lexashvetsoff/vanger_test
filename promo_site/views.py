@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.urls import reverse
-from django.contrib import admin
 
 from promo_site.models import Slider, SliderImage
 

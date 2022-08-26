@@ -26,6 +26,7 @@ urlpatterns = [
     path('promo/', views.show_promo, name='show_promo'),
     # path('tinymce/', include('tinymce.urls')),
     # path(r'^filer/', include('filer.urls')),
+    path(r"^ files /", include ("filer.urls")),
 ]
 
 if settings.DEBUG:

@@ -85,7 +85,7 @@
     <section class="photo">
         <h2 class="photo-title">Фотографии</h2>
         <div class="container">
-            <div class="main-slider">
+            <div id="first_id" class="main-slider">
                 {% for img in imgs %}
                 <div class="main-slider__item">
                     <img src="{{img}}" alt="1">
@@ -93,13 +93,15 @@
                 {% endfor %}
             </div>
 
-            <div class="nav-slider">
+            <div id="nav_first_id" class="nav-slider">
                 {% for img in imgs %}
                 <div class="nav-slider__item slider-nav">
                     <img src="{{img}}" alt="1">
                 </div>
                 {% endfor %}
             </div>
+            <!-- <div class="main-slider"></div>
+            <div class="nav-slider"></div> -->
         </div>
     </section>
 

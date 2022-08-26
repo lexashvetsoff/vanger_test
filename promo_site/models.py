@@ -23,23 +23,11 @@ class SliderImage(models.Model):
         verbose_name='Порядковый номер',
         default=0
     )
-    image = models.ImageField(
+    image = FilerImageField(
         verbose_name='Изображение',
-        upload_to='media/'
+        on_delete=models.CASCADE,
+        related_name='slider_images',
     )
-    # image = FilerImageField(
-    #     verbose_name='Изображение',
-    #     on_delete=models.CASCADE,
-    #     related_name='slider_images',
-    # )
-    # image_folder = FilerFolderField(
-    #     verbose_name='Папка с фото',
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True,
-    #     default=''
-    # )
-    # image = models.ImageField(upload_to='media', verbose_name=u'Фотография')
 
     class Meta:
         ordering = ['order_number']
