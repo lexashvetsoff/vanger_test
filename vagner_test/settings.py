@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    'adminsortable2',
     'promo_site.apps.PromoSiteConfig',
 ]
 
@@ -84,7 +88,7 @@ password = env('PASSWORD')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testDB',
+        'NAME': 'testDB_2',
         'USER': user,
         'PASSWORD': password, 
         'HOST': '127.0.0.1', 
@@ -95,6 +99,13 @@ DATABASES = {
     }
 }
 
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -138,3 +149,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_URL = '/media/'
