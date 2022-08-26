@@ -4,9 +4,17 @@ from filer.fields.image import FilerImageField
 from filer.fields.folder import FilerFolderField
 
 class Slider(models.Model):
+    name = models.CharField(
+        max_length=200,
+        verbose_name='Название слайдера',
+        default=''
+    )
+
     title = models.CharField(
         max_length=200,
-        verbose_name='Название слайдера'
+        verbose_name='Заголовок секции',
+        default='',
+        blank=True
     )
 
     def __str__(self):
