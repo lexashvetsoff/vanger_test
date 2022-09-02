@@ -38,26 +38,13 @@ $(document).ready(function(){
     for (let i = 0; i <= main_id_all.length; i++) {
         main_id = '#' + main_id_all[i];
         nav_id = '#' + nav_id_all[i];
+
         $(main_id).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: nav_id
-        });
-        $(nav_id).slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            asNavFor: main_id,
             dots: false,
-            centerMode: true,
-            focusOnSelect: true,
-            speed: 500,
-            easing: 'linear',
             infinite: true,
-            initialSlide: 0,
-            autoplay: true,
-            variableWidth: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
         });
     }
 });

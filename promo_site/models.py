@@ -1,12 +1,19 @@
-from email.policy import default
 from django.db import models
 from filer.fields.image import FilerImageField
-from filer.fields.folder import FilerFolderField
 
 class Slider(models.Model):
     name = models.CharField(
         max_length=200,
         verbose_name='Название слайдера',
+        default=''
+    )
+
+    bg_image = FilerImageField(
+        verbose_name='Изображение',
+        on_delete=models.CASCADE,
+        related_name='bg',
+        blank=True,
+        null=True,
         default=''
     )
 

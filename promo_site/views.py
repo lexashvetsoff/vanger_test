@@ -22,12 +22,19 @@ def show_promo(request):
         imgs = [img.image.url for img in slider_imgs]
         slider_id = '{}_{}'.format(slider.name, slider.id)
         nav_slider_id = 'nav_{}_{}'.format(slider.name, slider.id)
+        if slider.bg_image:
+            # bg_image = slider.bg_image.url
+            bg_image = 'url("{}")'.format(slider.bg_image.url)
+        else:
+            bg_image = '#507D2A'
         data_sliders = {
             'title': slider.title,
+            'bg_image': bg_image,
             'slider_id': slider_id,
             'nav_slider_id': nav_slider_id,
             'images': imgs
         }
+        print(bg_image)
         all_sliders.append(data_sliders)
 
     context = {

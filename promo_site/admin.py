@@ -1,6 +1,4 @@
 from django.contrib import admin
-from filer.admin.fileadmin import FileAdmin
-from django.utils.html import format_html
 
 from adminsortable2.admin import SortableInlineAdminMixin, SortableAdminBase
 
@@ -23,6 +21,3 @@ class PlaceAdmin(SortableAdminBase, admin.ModelAdmin):
 
 admin.site.site_title = 'Django Nasa'
 admin.site.site_header = 'Django Nasa'
-
-# admin.site.register(Slider)
-# admin.site.register(SliderImage)

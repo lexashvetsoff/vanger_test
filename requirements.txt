@@ -2,3 +2,4 @@ Django==2.2
 cryptography==37.0.4
 environs==9.5.0
 django-filer==2.2.3
+django-admin-sortable2==1.0

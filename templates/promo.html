@@ -1,4 +1,5 @@
 {% load static %}
+{% load thumbnail %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -83,20 +84,12 @@
     </section>
 
     {% for slider in all_sliders %}
-    <section class="photo">
+    <section class="photo" style="background: {{slider.bg_image}};">
         <h2 class="photo-title">{{slider.title}}</h2>
         <div class="container">
             <div id="{{slider.slider_id}}" class="main-slider">
                 {% for img in slider.images %}
                     <div class="main-slider__item">
-                        <img src="{{img}}" alt="1">
-                    </div>
-                {% endfor %}
-            </div>
-
-            <div id="{{slider.nav_slider_id}}" class="nav-slider">
-                {% for img in slider.images %}
-                    <div class="nav-slider__item slider-nav">
                         <img src="{{img}}" alt="1">
                     </div>
                 {% endfor %}
